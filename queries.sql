@@ -76,10 +76,10 @@ FROM animals INNER JOIN owners
 ON owners.id = animals.owner_id 
 WHERE owners.full_name='Jennifer Orwell' AND animals.species_id=2;
 
-SELECT owners.full_name, animals.name, , animals.escape_attempts
+SELECT owners.full_name, animals.name, animals.escape_attempts 
 FROM animals INNER JOIN owners 
 ON owners.id = animals.owner_id 
-WHERE animals.escape_attempts=0;
+WHERE owners.full_name='Dean Winchester' AND animals.escape_attempts=0;
 
 SELECT owners.full_name, count(animals.owner_id) 
 FROM animals INNER JOIN owners on owners.id = animals.owner_id 
