@@ -52,12 +52,12 @@ SELECT species, MIN(weight_kg), MAX(weight_kg) FROM animals GROUP BY species;
 SELECT species, AVG(escape_attempts) FROM animals WHERE date_of_birth BETWEEN '1990-01-01' AND '2000-12-31' GROUP BY species;
 
 /* day 3 */
-Select animals.name, owners.full_name 
+Select *
 from animals INNER JOIN owners 
 ON owners.id = animals.owner_id 
 WHERE owners.full_name = 'Melody Pond';
 
-SELECT animals.name 
+SELECT *
 FROM animals INNER JOIN species 
 ON species.id = animals.species_id 
 WHERE species.name = 'Pokemon';
