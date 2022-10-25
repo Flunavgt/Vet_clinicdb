@@ -56,3 +56,12 @@ CREATE TABLE visits
 vet_id INT,
 date_of_visit date,
 PRIMARY KEY(animal_id, vet_id, date_of_visit));
+
+ALTER TABLE owners ADD COLUMN email VARCHAR(120);
+
+ALTER TABLE visits ALTER COLUMN date_of_visit SET DATA TYPE TIMESTAMP WITH TIME ZONE;
+
+CREATE INDEX visits_animals ON visits(animal_id);
+CREATE INDEX idx_owners_email ON owners(email DESC);
+CREATE INDEX visits_vet ON visits(vet_id DESC);
+
